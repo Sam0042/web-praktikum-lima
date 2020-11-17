@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title>Kurs</title>
+        <script>
+            function pilih() {
+                let kurs = document.getElementById('matauang');
+                let idx = kurs.selectedIndex;
+                let jumlah1 = document.getElementById('jml1');
+                let jmal = jumlah1;
+                console.log('Hasil Kurs adalah '+kurs[idx].value*jumlah1.value);
+                let proses1 = kurs[idx].value*jumlah1.value;
+                let jumlah2 = document.getElementById('jml2')
+                document.getElementById('jml2').value=proses1
+            }
+            function berubah() {
+                let ubah = document.getElementById('gaya1')
+                ubah.style.backgroundColor='#388e3c';
+            }
+            function kembali() {
+                let kembali = document.getElementById('gaya1')
+                kembali.style.backgroundColor='#009faf'
+            }
+        </script>
+        <style>
+            body{
+                background-color: #546e7a;
+                color: #eceff1;
+                font-family: sans-serif;
+            }
+            #gaya1 {
+                background-color:#009faf;
+                border: 1px #4dd0e1;
+            }
+            #judul {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="judul">
+            <h1>KURS</h1>
+        </div>
+        <div id="gaya1" onmouseover="berubah()" onmouseout="kembali()">
+        <form id="frm1" >
+            <label>Rupiah</label>
+            <input type="text" id="jml1" value="0"onchange='pilih()'>
+            <label>Mata Uang</label>
+                <select id="matauang" onchange="pilih()">
+                    <option value="" >--Pilih--</option>
+                    <option value="0.000097">Dollar Australia</option>
+                    <option value="0.00029">Ringgit Malaysia</option>
+                    <option value="0.0034">Peso Filipina</option>
+                </select>
+
+                <input type="text" id="jml2" value="1" onchange='pilih()'>
+        </form>
+        </div>
+
+    </body>
+</html> 

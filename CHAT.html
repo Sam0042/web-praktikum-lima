@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+<title>CHATAPP</title>
+<style>
+    textarea{
+        color: seashell;
+        position: fixed;
+        right: 0px;
+        width: 12%;
+        bottom: 300px;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background:#48a999;
+        min-height: 200px;
+        resize: none;
+    }
+    body{
+        font-family: sans-serif;
+        background-color:#003d33;
+    }
+    #style1{
+        background-color:#00796b;
+        width: 12%;
+        right: 0px;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        min-height: 100px;
+        position: fixed;
+        bottom: 180px;
+    }
+    #style1 > input{
+        border: none;
+        position: fixed;
+        right: 0px;
+        bottom: 290px;
+    }
+    #style1 > button{
+        background-color: #ffee58;
+        border: none;
+        position: fixed;
+        right: 100px;
+        bottom: 240px;
+    }
+    #head > #chatapp{
+        color: #ffee58;
+        position: fixed;
+        right: 10px;
+        bottom: 515px;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class="chatapp001"></div>
+        <div id="head">
+            <h1 id="chatapp">CHAT APP</h1>
+        </div>
+		<div>
+			<textarea class="tampilan" id="tampilan" disabled></textarea>
+        </div>
+        <div id="style1">
+            <input type="text" class="input" placeholder="Tulis pesan...">
+            <br>
+			<button class="mengirim" onClick="aksi()" onmouseover="makelight()" onmouseout="makedark()">Kirim</button>
+        </div>
+
+	<script>
+	let keluaran = document.querySelector(".tampilan");
+	let inputcht = document.querySelector(".input");    
+	let kirimcht = document.querySelector(".mengirim");
+	let hasil = document.querySelector(".tampilan");
+		function aksi(){
+			keluaran.innerHTML = hasil.innerHTML + "\n Anda: " + inputcht.value;'\n';
+            console.log('P1 mengirim : ',inputcht.value)
+		}
+        function makelight(){
+            let tombol = document.querySelector(".mengirim");
+            tombol.style.backgroundColor='#ffff8b';
+        }
+        function makedark(){
+            let tombol = document.querySelector(".mengirim");
+            tombol.style.backgroundColor='#ffee58';
+        }
+	</script>
+</body>
+</html>
